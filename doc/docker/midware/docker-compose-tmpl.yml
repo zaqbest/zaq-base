@@ -108,7 +108,7 @@ services:
     privileged: true
     restart: always
   kafka-single:
-    image: wurstmeister/kafka
+    image: wurstmeister/kafka:2.13-2.8.1
     container_name: mid_kafka-single
     ports:
       - 39511:9092
@@ -177,7 +177,7 @@ services:
     image: apacherocketmq/rocketmq-dashboard:1.0.0
     container_name: midware_rmq-bashboard
     ports:
-      - 8080:8080
+      - 39513:8080
     environment:
       JAVA_OPTS: "-Drocketmq.namesrv.addr=rmq-namesrv:9876"
     restart: always

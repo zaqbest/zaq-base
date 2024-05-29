@@ -2,12 +2,12 @@
 
 # 配置正确的用户名密码变量
 export DOCKER_REGISTRY_URL=${DEV_DOCKER_REGISTRY_URL}
-export DOCKER_REGISTRY_PROJECT=lptest
+export DOCKER_REGISTRY_PROJECT=${DEV_DOCKER_REGISTRY_PROJECT}
 export DOCKER_REGISTRY_USERNAME=${DEV_DOCKER_REGISTRY_USERNAME}
 export DOCKER_REGISTRY_PASSWORD=${DEV_DOCKER_REGISTRY_PASSWORD}
 
 export PLATFORMS=${PLATFORMS:=linux/amd64,linux/arm64}
-export IMAGE_NAME=debugcapsule:1.0.0-ubuntu-22.04
+export IMAGE_NAME=omnicapsule:1.0.0-ubuntu-22.04
 export DOCKERFILE_PATH=./Dockerfile
 export CONTEXT_PATH=.
 
@@ -40,3 +40,4 @@ docker buildx build \
 --push ${CONTEXT_PATH}
 
 docker logout $DOCKER_REGISTRY_URL
+
